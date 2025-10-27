@@ -1,0 +1,130 @@
+/**
+ * Weather Forecast Widget Styles
+ * 
+ * @package WeatherForecastWidget
+ * @version 1.0.0
+ */
+
+.weather-forecast-widget .weather-current {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.weather-forecast-widget .weather-location {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.weather-forecast-widget .weather-sunset {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.weather-forecast-widget .weather-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.weather-forecast-widget .weather-day {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.weather-forecast-widget .weather-day:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-forecast-widget .weather-date {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #444;
+    min-width: 80px;
+}
+
+.weather-forecast-widget .weather-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.weather-forecast-widget .weather-temp {
+    flex: 1;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.weather-forecast-widget .temp-high {
+    font-weight: 700;
+    color: #d9534f;
+}
+
+.weather-forecast-widget .temp-low {
+    color: #5bc0de;
+}
+
+.weather-forecast-widget .weather-description {
+    flex: 1;
+    font-size: 0.85em;
+    color: #666;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.weather-forecast-widget .weather-error {
+    padding: 10px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    color: #721c24;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .weather-forecast-widget .weather-day {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .weather-forecast-widget .weather-description {
+        flex: 100%;
+        text-align: left;
+        margin-top: 5px;
+        padding-left: 5px;
+    }
+}
+
+/* Widget Admin Styles */
+.widget .widget-content .weather-forecast-widget input[type="text"] {
+    width: 100%;
+}
+
+.widget .widget-content .weather-forecast-widget select {
+    width: 100%;
+}
+
+.widget .widget-content .weather-forecast-widget small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-style: italic;
+}
+
+.widget .widget-content .weather-forecast-widget small a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.widget .widget-content .weather-forecast-widget small a:hover {
+    text-decoration: underline;
+}
