@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: 5-Day Weather Forecast Widget
- * Plugin URI: https://github.com/yourusername/weather-forecast-widget
+ * Plugin URI: https://github.com/Fin-Fur-Feather/wp-weather-widget
  * Description: Displays a 5-day weather forecast and current day's sunset time for any specified zip code using OpenWeatherMap API.
  * Version: 1.0.0
- * Author: Your Name
- * Author URI: https://yourwebsite.com
+ * Author: Fin Fur Feather
+ * Author URI: https://github.com/Fin-Fur-Feather
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: weather-forecast-widget
+ * Text Domain: wp-weather-widget
  * Domain Path: /languages
  *
  * @package WeatherForecastWidget
@@ -34,10 +34,10 @@ class Weather_Forecast_Widget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'weather_forecast_widget',
-            esc_html__( '5-Day Weather Forecast', 'weather-forecast-widget' ),
+            esc_html__( '5-Day Weather Forecast', 'wp-weather-widget' ),
             array( 
-                'description' => esc_html__( 'Displays 5-day weather forecast and sunset time for a specified zip code.', 'weather-forecast-widget' ),
-                'classname' => 'weather-forecast-widget'
+                'description' => esc_html__( 'Displays 5-day weather forecast and sunset time for a specified zip code.', 'wp-weather-widget' ),
+                'classname' => 'wp-weather-widget'
             )
         );
     }
@@ -48,7 +48,7 @@ class Weather_Forecast_Widget extends WP_Widget {
     public function widget( $args, $instance ) {
         echo $args['before_widget'];
 
-        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Weather Forecast', 'weather-forecast-widget' );
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Weather Forecast', 'wp-weather-widget' );
         $zip_code = ! empty( $instance['zip_code'] ) ? $instance['zip_code'] : '';
         $api_key = ! empty( $instance['api_key'] ) ? $instance['api_key'] : '';
         $country_code = ! empty( $instance['country_code'] ) ? $instance['country_code'] : 'US';
@@ -57,7 +57,7 @@ class Weather_Forecast_Widget extends WP_Widget {
         echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
 
         if ( empty( $zip_code ) || empty( $api_key ) ) {
-            echo '<p>' . esc_html__( 'Please configure the widget with your zip code and API key.', 'weather-forecast-widget' ) . '</p>';
+            echo '<p>' . esc_html__( 'Please configure the widget with your zip code and API key.', 'wp-weather-widget' ) . '</p>';
             echo $args['after_widget'];
             return;
         }
@@ -102,14 +102,14 @@ class Weather_Forecast_Widget extends WP_Widget {
         $current_response = wp_remote_get( $current_url, array( 'timeout' => 15 ) );
 
         if ( is_wp_error( $current_response ) ) {
-            return new WP_Error( 'api_error', esc_html__( 'Unable to fetch current weather data.', 'weather-forecast-widget' ) );
+            return new WP_Error( 'api_error', esc_html__( 'Unable to fetch current weather data.', 'wp-weather-widget' ) );
         }
 
         $current_body = wp_remote_retrieve_body( $current_response );
         $current_data = json_decode( $current_body, true );
 
         if ( ! $current_data || isset( $current_data['cod'] ) && $current_data['cod'] != 200 ) {
-            $error_message = isset( $current_data['message'] ) ? $current_data['message'] : esc_html__( 'Invalid response from weather service.', 'weather-forecast-widget' );
+            $error_message = isset( $current_data['message'] ) ? $current_data['message'] : esc_html__( 'Invalid response from weather service.', 'wp-weather-widget' );
             return new WP_Error( 'api_error', $error_message );
         }
 
@@ -125,14 +125,14 @@ class Weather_Forecast_Widget extends WP_Widget {
         $forecast_response = wp_remote_get( $forecast_url, array( 'timeout' => 15 ) );
 
         if ( is_wp_error( $forecast_response ) ) {
-            return new WP_Error( 'api_error', esc_html__( 'Unable to fetch forecast data.', 'weather-forecast-widget' ) );
+            return new WP_Error( 'api_error', esc_html__( 'Unable to fetch forecast data.', 'wp-weather-widget' ) );
         }
 
         $forecast_body = wp_remote_retrieve_body( $forecast_response );
         $forecast_data = json_decode( $forecast_body, true );
 
         if ( ! $forecast_data || isset( $forecast_data['cod'] ) && $forecast_data['cod'] != 200 ) {
-            return new WP_Error( 'api_error', esc_html__( 'Invalid forecast response.', 'weather-forecast-widget' ) );
+            return new WP_Error( 'api_error', esc_html__( 'Invalid forecast response.', 'wp-weather-widget' ) );
         }
 
         // Combine data
@@ -161,7 +161,7 @@ class Weather_Forecast_Widget extends WP_Widget {
         
         if ( isset( $current['sys']['sunset'] ) ) {
             $sunset_time = date_i18n( get_option( 'time_format' ), $current['sys']['sunset'] );
-            echo '<p class="weather-sunset">🌅 ' . esc_html__( 'Sunset: ', 'weather-forecast-widget' ) . '<strong>' . esc_html( $sunset_time ) . '</strong></p>';
+            echo '<p class="weather-sunset">🌅 ' . esc_html__( 'Sunset: ', 'wp-weather-widget' ) . '<strong>' . esc_html( $sunset_time ) . '</strong></p>';
         }
         echo '</div>';
 
@@ -228,7 +228,7 @@ class Weather_Forecast_Widget extends WP_Widget {
      * Widget backend form
      */
     public function form( $instance ) {
-        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Weather Forecast', 'weather-forecast-widget' );
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Weather Forecast', 'wp-weather-widget' );
         $zip_code = ! empty( $instance['zip_code'] ) ? $instance['zip_code'] : '';
         $api_key = ! empty( $instance['api_key'] ) ? $instance['api_key'] : '';
         $country_code = ! empty( $instance['country_code'] ) ? $instance['country_code'] : 'US';
@@ -236,7 +236,7 @@ class Weather_Forecast_Widget extends WP_Widget {
         ?>
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>">
-                <?php esc_html_e( 'Title:', 'weather-forecast-widget' ); ?>
+                <?php esc_html_e( 'Title:', 'wp-weather-widget' ); ?>
             </label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" 
                    name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" 
@@ -245,7 +245,7 @@ class Weather_Forecast_Widget extends WP_Widget {
 
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'zip_code' ) ); ?>">
-                <?php esc_html_e( 'Zip Code:', 'weather-forecast-widget' ); ?>
+                <?php esc_html_e( 'Zip Code:', 'wp-weather-widget' ); ?>
             </label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'zip_code' ) ); ?>" 
                    name="<?php echo esc_attr( $this->get_field_name( 'zip_code' ) ); ?>" type="text" 
@@ -254,17 +254,17 @@ class Weather_Forecast_Widget extends WP_Widget {
 
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'country_code' ) ); ?>">
-                <?php esc_html_e( 'Country Code:', 'weather-forecast-widget' ); ?>
+                <?php esc_html_e( 'Country Code:', 'wp-weather-widget' ); ?>
             </label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'country_code' ) ); ?>" 
                    name="<?php echo esc_attr( $this->get_field_name( 'country_code' ) ); ?>" type="text" 
                    value="<?php echo esc_attr( $country_code ); ?>" placeholder="US">
-            <small><?php esc_html_e( 'Two-letter country code (e.g., US, CA, GB)', 'weather-forecast-widget' ); ?></small>
+            <small><?php esc_html_e( 'Two-letter country code (e.g., US, CA, GB)', 'wp-weather-widget' ); ?></small>
         </p>
 
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'api_key' ) ); ?>">
-                <?php esc_html_e( 'OpenWeatherMap API Key:', 'weather-forecast-widget' ); ?>
+                <?php esc_html_e( 'OpenWeatherMap API Key:', 'wp-weather-widget' ); ?>
             </label>
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'api_key' ) ); ?>" 
                    name="<?php echo esc_attr( $this->get_field_name( 'api_key' ) ); ?>" type="text" 
@@ -273,7 +273,7 @@ class Weather_Forecast_Widget extends WP_Widget {
                 <?php 
                 printf(
                     /* translators: %s: OpenWeatherMap API URL */
-                    esc_html__( 'Get your free API key from %s', 'weather-forecast-widget' ),
+                    esc_html__( 'Get your free API key from %s', 'wp-weather-widget' ),
                     '<a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a>'
                 );
                 ?>
@@ -282,15 +282,15 @@ class Weather_Forecast_Widget extends WP_Widget {
 
         <p>
             <label for="<?php echo esc_attr( $this->get_field_id( 'units' ) ); ?>">
-                <?php esc_html_e( 'Temperature Units:', 'weather-forecast-widget' ); ?>
+                <?php esc_html_e( 'Temperature Units:', 'wp-weather-widget' ); ?>
             </label>
             <select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'units' ) ); ?>" 
                     name="<?php echo esc_attr( $this->get_field_name( 'units' ) ); ?>">
                 <option value="imperial" <?php selected( $units, 'imperial' ); ?>>
-                    <?php esc_html_e( 'Fahrenheit (°F)', 'weather-forecast-widget' ); ?>
+                    <?php esc_html_e( 'Fahrenheit (°F)', 'wp-weather-widget' ); ?>
                 </option>
                 <option value="metric" <?php selected( $units, 'metric' ); ?>>
-                    <?php esc_html_e( 'Celsius (°C)', 'weather-forecast-widget' ); ?>
+                    <?php esc_html_e( 'Celsius (°C)', 'wp-weather-widget' ); ?>
                 </option>
             </select>
         </p>
@@ -330,7 +330,7 @@ add_action( 'widgets_init', 'wfw_register_weather_widget' );
 function wfw_enqueue_styles() {
     if ( is_active_widget( false, false, 'weather_forecast_widget', true ) ) {
         wp_enqueue_style( 
-            'weather-forecast-widget', 
+            'wp-weather-widget', 
             WFW_PLUGIN_URL . 'assets/css/weather-widget.css', 
             array(), 
             WFW_VERSION 

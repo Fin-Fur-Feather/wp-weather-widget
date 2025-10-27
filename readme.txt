@@ -1,5 +1,5 @@
 === 5-Day Weather Forecast Widget ===
-Contributors: yourusername
+Contributors: Fin-Fur-Feather
 Tags: weather, forecast, widget, openweathermap, sunset, temperature
 Requires at least: 5.0
 Tested up to: 6.4
@@ -245,9 +245,9 @@ Planned features for future releases:
 
 == Author ==
 
-Developed by Your Name
-* Website: [your-website.com](https://your-website.com)
-* GitHub: [github.com/yourusername](https://github.com/yourusername)
+Developed by Fin Fur Feather
+* Website: [github.com/Fin-Fur-Feather](https://github.com/Fin-Fur-Feather)
+* GitHub: [github.com/Fin-Fur-Feather](https://github.com/Fin-Fur-Feather)
 
 == License ==
 

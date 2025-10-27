@@ -313,11 +313,11 @@ GNU General Public License for more details.
 
 ## Author
 
-**Your Name**
-- Website: [your-website.com](https://your-website.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
+**Fin Fur Feather**
+- Website: [Fin Fur Feather](https://github.com/Fin-Fur-Feather)
+- GitHub: [@Fin-Fur-Feather](https://github.com/Fin-Fur-Feather)
 
 ---
 
-Made with ☕ and 💻 | [Report an Issue](https://github.com/yourusername/weather-forecast-widget/issues)
+Made with ☕ and 💻 | [Report an Issue](https://github.com/Fin-Fur-Feather/wp-weather-widget/issues)
 
