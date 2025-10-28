@@ -118,7 +118,7 @@ In addition to the sidebar widget, you can also display weather on your **WordPr
 - Easy enable/disable toggle
 - Manual cache clearing option
 
-📖 **[View Complete Admin Dashboard Widget Documentation](ADMIN-DASHBOARD-WIDGET.md)**
+📖 **[View Complete Admin Dashboard Widget Documentation](doc/ADMIN-DASHBOARD-WIDGET.md)**
 
 ## Usage
 
