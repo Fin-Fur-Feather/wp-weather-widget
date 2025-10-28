@@ -298,21 +298,13 @@ For support, feature requests, or bug reports:
 
 ## Changelog
 
-### Version 1.0.0 (2025-10-28)
-- Initial release
-- 5-day weather forecast display
-- Current day sunset time
-- Configurable zip code and country
-- Fahrenheit/Celsius temperature units
-- Smart caching system
-- Responsive design
-- Error handling
-- OpenWeatherMap API integration
-- **NEW**: Admin dashboard widget with separate configuration
-- **NEW**: Settings page for dashboard widget (Settings → Dashboard Weather)
-- **NEW**: Enable/disable toggle for dashboard widget
-- **NEW**: Form validation and enhanced UX
-- **NEW**: Admin-specific styling and animations
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history and release notes.
+
+**Latest Release: v1.0.0** (2025-10-28)
+- Initial release with 5-day weather forecast
+- Admin dashboard widget with settings page
+- Smart caching and responsive design
+- [View full changelog →](CHANGELOG.md)
 
 ## Roadmap
 
