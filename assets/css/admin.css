@@ -1,0 +1,326 @@
+/**
+ * Weather Forecast Widget - Admin Styles
+ * 
+ * @package WeatherForecastWidget
+ * @version 1.0.0
+ */
+
+/* Dashboard Widget Container */
+#wfw_dashboard_weather_widget .inside {
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard Weather Widget */
+.wfw-dashboard-weather {
+    padding: 0;
+}
+
+/* Current Weather Section */
+.wfw-dashboard-current {
+    padding: 15px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border-radius: 0;
+    margin: 0;
+}
+
+.wfw-location-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.wfw-sunset {
+    margin: 0;
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.wfw-sunset strong {
+    font-weight: 600;
+}
+
+/* Forecast Grid */
+.wfw-dashboard-forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Forecast Day */
+.wfw-forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    text-align: center;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.wfw-forecast-day:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.wfw-forecast-day:last-child {
+    border-right: none;
+}
+
+/* Day Date */
+.wfw-day-date {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+/* Weather Icon */
+.wfw-day-icon {
+    width: 60px;
+    height: 60px;
+    margin: 5px 0;
+}
+
+/* Temperature Display */
+.wfw-day-temps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+.wfw-temp-high {
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+.wfw-temp-low {
+    color: #3498db;
+    font-weight: 500;
+}
+
+.wfw-temp-separator {
+    color: #95a5a6;
+}
+
+/* Weather Description */
+.wfw-day-description {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    margin-top: 5px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dashboard Footer */
+.wfw-dashboard-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-top: 1px solid #e5e5e5;
+    font-size: 0.85em;
+}
+
+.wfw-settings-link {
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.wfw-settings-link:hover {
+    color: #005177;
+    text-decoration: underline;
+}
+
+.wfw-last-updated {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Notice and Error Messages */
+.wfw-dashboard-notice,
+.wfw-dashboard-error {
+    padding: 15px;
+    text-align: center;
+}
+
+.wfw-dashboard-notice {
+    background: #e8f4f8;
+    border-left: 4px solid #00a0d2;
+}
+
+.wfw-dashboard-notice p {
+    margin: 0 0 10px 0;
+    color: #0073aa;
+}
+
+.wfw-dashboard-error {
+    background: #fef6f6;
+    border-left: 4px solid #dc3232;
+}
+
+.wfw-dashboard-error p {
+    margin: 0 0 10px 0;
+    color: #dc3232;
+}
+
+.wfw-dashboard-error strong {
+    font-weight: 600;
+}
+
+/* Settings Page Styles */
+.wfw-settings-page {
+    max-width: 800px;
+}
+
+.wfw-settings-page h1 {
+    margin-bottom: 20px;
+}
+
+.wfw-settings-page .form-table {
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.wfw-settings-page .form-table th {
+    padding: 20px 15px;
+    width: 200px;
+}
+
+.wfw-settings-page .form-table td {
+    padding: 20px 15px;
+}
+
+.wfw-settings-page .regular-text {
+    width: 100%;
+    max-width: 400px;
+}
+
+.wfw-settings-page .description {
+    margin-top: 5px;
+    color: #666;
+}
+
+/* Cache Management Section */
+.wfw-settings-page hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .wfw-dashboard-forecast {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .wfw-dashboard-forecast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .wfw-forecast-day:nth-child(2n) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .wfw-dashboard-forecast {
+        grid-template-columns: 1fr;
+    }
+    
+    .wfw-forecast-day {
+        border-right: none;
+    }
+    
+    .wfw-dashboard-footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+/* Loading Animation */
+.wfw-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #0073aa;
+    animation: wfw-spin 1s linear infinite;
+}
+
+@keyframes wfw-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dashboard Widget Handle */
+#wfw_dashboard_weather_widget .hndle {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border: none;
+}
+
+#wfw_dashboard_weather_widget .hndle .dashicons {
+    color: #ffffff;
+}
+
+/* Widget Positioning */
+#wfw_dashboard_weather_widget {
+    border: 1px solid #c3c4c7;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Settings Page Header */
+.wfw-settings-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.wfw-settings-header h2 {
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Success Messages */
+.notice.notice-success {
+    border-left-color: #46b450;
+}
+
+/* Button Styles */
+.wfw-dashboard-notice .button-primary,
+.wfw-settings-page .button-primary {
+    background: #667eea;
+    border-color: #667eea;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.wfw-dashboard-notice .button-primary:hover,
+.wfw-settings-page .button-primary:hover {
+    background: #764ba2;
+    border-color: #764ba2;
+}
+

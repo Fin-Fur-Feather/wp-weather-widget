@@ -52,3 +52,9 @@ composer.lock
 dist/
 build/
 
+# GitHub Issue Update Files (temporary, not for commit)
+GITHUB-ISSUE-UPDATE.md
+GITHUB-ISSUE-CLOSE.md
+PASTE-TO-ISSUE-*.md
+HOW-TO-UPDATE-GITHUB.md
+

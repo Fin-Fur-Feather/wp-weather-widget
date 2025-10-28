@@ -19,6 +19,8 @@ A WordPress plugin that displays a beautiful 5-day weather forecast with current
 - ✅ **Easy Configuration** - Simple widget settings interface
 - ✅ **Error Handling** - User-friendly error messages
 - ✅ **Free API** - Uses OpenWeatherMap free tier (1,000 calls/day)
+- ✅ **Admin Dashboard Widget** - Display weather on WordPress admin dashboard
+- ✅ **Dual Widget Support** - Separate sidebar and dashboard widgets with independent settings
 
 ## Requirements
 
@@ -95,6 +97,28 @@ A WordPress plugin that displays a beautiful 5-day weather forecast with current
 ### Step 4: Save and View
 
 Click **Save** and visit your website to see the weather widget in action!
+
+## Admin Dashboard Widget
+
+In addition to the sidebar widget, you can also display weather on your **WordPress admin dashboard**!
+
+### Quick Setup
+
+1. Go to **Settings → Dashboard Weather**
+2. Check **Enable Dashboard Widget**
+3. Enter your **Zip Code** and **API Key**
+4. Select your **Country Code** and **Temperature Units**
+5. Click **Save Settings**
+6. View your weather widget on the **Dashboard**
+
+**Key Benefits:**
+- See weather without leaving the admin area
+- Separate configuration from sidebar widget
+- Beautiful admin-optimized design
+- Easy enable/disable toggle
+- Manual cache clearing option
+
+📖 **[View Complete Admin Dashboard Widget Documentation](ADMIN-DASHBOARD-WIDGET.md)**
 
 ## Usage
 
@@ -274,7 +298,7 @@ For support, feature requests, or bug reports:
 
 ## Changelog
 
-### Version 1.0.0 (2025-10-27)
+### Version 1.0.0 (2025-10-28)
 - Initial release
 - 5-day weather forecast display
 - Current day sunset time
@@ -284,6 +308,11 @@ For support, feature requests, or bug reports:
 - Responsive design
 - Error handling
 - OpenWeatherMap API integration
+- **NEW**: Admin dashboard widget with separate configuration
+- **NEW**: Settings page for dashboard widget (Settings → Dashboard Weather)
+- **NEW**: Enable/disable toggle for dashboard widget
+- **NEW**: Form validation and enhanced UX
+- **NEW**: Admin-specific styling and animations
 
 ## Contributing
 
