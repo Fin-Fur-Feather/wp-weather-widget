@@ -56,7 +56,7 @@ build/
 GITHUB-ISSUE-UPDATE.md
 GITHUB-ISSUE-CLOSE.md
 PASTE-TO-ISSUE-*.md
-HOW-TO-UPDATE-GITHUB.md
+HOW-TO-*.md
 
 # GitHub Release Helper Files (temporary, not for commit)
 HOW-TO-UPDATE-RELEASE.md
