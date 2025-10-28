@@ -5,6 +5,15 @@ All notable changes to the 5-Day Weather Forecast Widget will be documented in t
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- **Dark Mode Support** - Built-in dark mode toggle for both frontend and admin widgets
+- localStorage persistence for dark mode preference
+- Smooth color transitions between light and dark modes
+- Separate dark mode toggles for frontend widget and admin dashboard widget
+- Dark mode styling for all widget components (weather cards, temperatures, icons, etc.)
+
 ## [1.0.0] - 2025-10-28
 
 ### Added

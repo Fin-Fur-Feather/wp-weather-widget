@@ -21,6 +21,7 @@ A WordPress plugin that displays a beautiful 5-day weather forecast with current
 - ✅ **Free API** - Uses OpenWeatherMap free tier (1,000 calls/day)
 - ✅ **Admin Dashboard Widget** - Display weather on WordPress admin dashboard
 - ✅ **Dual Widget Support** - Separate sidebar and dashboard widgets with independent settings
+- ✅ **Dark Mode** - Built-in dark mode toggle with localStorage persistence
 
 ## Requirements
 
@@ -97,6 +98,17 @@ A WordPress plugin that displays a beautiful 5-day weather forecast with current
 ### Step 4: Save and View
 
 Click **Save** and visit your website to see the weather widget in action!
+
+## Dark Mode
+
+The widget includes a built-in dark mode feature:
+
+- **Frontend Widget**: A toggle button appears on pages with the weather widget
+- **Admin Dashboard Widget**: A toggle appears at the top of the dashboard widget
+- **Automatic Persistence**: Your dark mode preference is saved in localStorage
+- **Smooth Transitions**: Colors transition smoothly between light and dark modes
+
+To toggle dark mode, simply click the 🌙 Dark Mode button that appears with the widget.
 
 ## Admin Dashboard Widget
 

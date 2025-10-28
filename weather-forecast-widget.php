@@ -155,6 +155,13 @@ class Weather_Forecast_Widget extends WP_Widget {
         $current = $weather_data['current'];
         $forecast = $weather_data['forecast'];
 
+        // Dark mode toggle
+        echo '<label class="wfw-dark-mode-toggle">';
+        echo '<input type="checkbox" id="wfw-dark-mode-checkbox" class="wfw-dark-mode-input">';
+        echo '<span class="wfw-toggle-switch"></span>';
+        echo '<span class="wfw-toggle-label">🌙 ' . esc_html__( 'Dark Mode', 'wp-weather-widget' ) . '</span>';
+        echo '</label>';
+
         // Display location and current sunset time
         echo '<div class="weather-current">';
         echo '<p class="weather-location"><strong>' . esc_html( $current['name'] ) . '</strong></p>';
@@ -325,7 +332,7 @@ function wfw_register_weather_widget() {
 add_action( 'widgets_init', 'wfw_register_weather_widget' );
 
 /**
- * Enqueue widget styles
+ * Enqueue widget styles and scripts
  */
 function wfw_enqueue_styles() {
     if ( is_active_widget( false, false, 'weather_forecast_widget', true ) ) {
@@ -334,6 +341,14 @@ function wfw_enqueue_styles() {
             WFW_PLUGIN_URL . 'assets/css/weather-widget.css', 
             array(), 
             WFW_VERSION 
+        );
+        
+        wp_enqueue_script( 
+            'wp-weather-widget', 
+            WFW_PLUGIN_URL . 'assets/js/weather-widget.js', 
+            array( 'jquery' ), 
+            WFW_VERSION, 
+            true 
         );
     }
 }

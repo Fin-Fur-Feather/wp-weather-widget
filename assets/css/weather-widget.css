@@ -128,3 +128,108 @@
 .widget .widget-content .weather-forecast-widget small a:hover {
     text-decoration: underline;
 }
+
+/* Dark Mode Toggle */
+.wfw-dark-mode-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wfw-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: background-color 0.3s;
+}
+
+.wfw-toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.wfw-dark-mode-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.wfw-dark-mode-toggle input[type="checkbox"]:checked + .wfw-toggle-switch {
+    background-color: #667eea;
+}
+
+.wfw-dark-mode-toggle input[type="checkbox"]:checked + .wfw-toggle-switch::after {
+    transform: translateX(26px);
+}
+
+.wfw-toggle-label {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Dark Mode Styles */
+body.wfw-dark-mode .weather-forecast-widget .weather-current {
+    border-bottom-color: #404040;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-location {
+    color: #e0e0e0;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-sunset {
+    color: #b0b0b0;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-day {
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-day:hover {
+    background: #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-date {
+    color: #e0e0e0;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .temp-high {
+    color: #ff6b6b;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .temp-low {
+    color: #4ecdc4;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-description {
+    color: #b0b0b0;
+}
+
+body.wfw-dark-mode .weather-forecast-widget .weather-error {
+    background: #4a2020;
+    border-color: #6b2c2c;
+    color: #ffcccc;
+}
+
+body.wfw-dark-mode .wfw-toggle-label {
+    color: #e0e0e0;
+}
+
+/* Smooth transition for dark mode */
+.weather-forecast-widget,
+.weather-forecast-widget * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

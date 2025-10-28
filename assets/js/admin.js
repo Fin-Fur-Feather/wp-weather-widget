@@ -13,6 +13,9 @@
      */
     $(document).ready(function() {
         
+        // Initialize dark mode
+        initDarkMode();
+        
         // Add fade-in animation to forecast days
         initForecastAnimation();
         
@@ -26,6 +29,47 @@
         initAPIKeyToggle();
         
     });
+
+    /**
+     * Initialize Dark Mode
+     */
+    function initDarkMode() {
+        // Check if dark mode is enabled in localStorage
+        var isDarkMode = localStorage.getItem('wfw-admin-dark-mode') === 'true';
+        
+        // Apply dark mode if enabled
+        if (isDarkMode) {
+            $('body').addClass('wfw-admin-dark-mode');
+        }
+        
+        // Add dark mode toggle to dashboard widget
+        if ($('#wfw_dashboard_weather_widget').length) {
+            var $widget = $('#wfw_dashboard_weather_widget .inside');
+            
+            // Create toggle HTML
+            var $toggle = $('<label class="wfw-admin-dark-mode-toggle">' +
+                '<input type="checkbox" id="wfw-admin-dark-mode-checkbox" ' + (isDarkMode ? 'checked' : '') + '>' +
+                '<span class="wfw-admin-toggle-switch"></span>' +
+                '<span class="wfw-admin-toggle-label">🌙 Dark Mode</span>' +
+                '</label>');
+            
+            // Prepend to widget content
+            $widget.prepend($toggle);
+            
+            // Handle toggle change
+            $('#wfw-admin-dark-mode-checkbox').on('change', function() {
+                var isChecked = $(this).is(':checked');
+                
+                if (isChecked) {
+                    $('body').addClass('wfw-admin-dark-mode');
+                    localStorage.setItem('wfw-admin-dark-mode', 'true');
+                } else {
+                    $('body').removeClass('wfw-admin-dark-mode');
+                    localStorage.setItem('wfw-admin-dark-mode', 'false');
+                }
+            });
+        }
+    }
 
     /**
      * Initialize forecast animation
