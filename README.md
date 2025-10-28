@@ -314,6 +314,21 @@ For support, feature requests, or bug reports:
 - **NEW**: Form validation and enhanced UX
 - **NEW**: Admin-specific styling and animations
 
+## Roadmap
+
+Planned features for future releases:
+
+- [ ] Shortcode support
+- [ ] Multiple location management
+- [ ] Wind speed and humidity display
+- [ ] Sunrise time display
+- [ ] Weather alerts integration
+- [x] ~~Admin dashboard widget~~ ✅ **Completed in v1.0.0**
+- [ ] Hourly forecast option
+- [ ] Dark mode styling option
+
+Want to see a feature implemented? [Open an issue](https://github.com/Fin-Fur-Feather/wp-weather-widget/issues) or submit a pull request!
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
